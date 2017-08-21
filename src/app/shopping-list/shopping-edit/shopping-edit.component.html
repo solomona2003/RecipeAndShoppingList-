@@ -1,0 +1,45 @@
+<h4 class="subs"> Shopping-Edit </h4>
+<div class="row">
+  <div class="col-xs-12">
+    
+    <form  (ngSubmit)="onUpdateOrAdd(f)" #f="ngForm" >
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="name">Name</label>
+          <input type="text" 
+          id="name" class="form-control" 
+          name="name" value=""
+          ngModel
+          #name
+          required>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="amount">Amount</label>
+          <input type="number" 
+          min="1"
+          id="amount" class="form-control" 
+          name="amount" value=""
+          pattern= "^[0-9]{1,9}$"
+          ngModel
+          #amount
+          required
+          >
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success" *ngIf = "name.value && amount.value"  [disabled] = "!f.valid"> {{editMode? "Update": "Add"}} </button>
+          <button type="button" class="btn btn-danger"  *ngIf = "editMode" (click) = "onDelete()" [disabled] = "!editMode">Delete</button>
+          <button type="button" class="btn btn-primary" *ngIf = "name.value && amount.value"  (click) = "onClear()" [disabled] = "!name.value && !amount.value">Clear</button>
+        </div>
+        
+      </div>
+
+
+    </form>
+
+  </div>
+</div>

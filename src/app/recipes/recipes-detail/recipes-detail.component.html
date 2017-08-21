@@ -1,0 +1,58 @@
+
+<h4 class="subs">Recipes-Details Component</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <img src="{{recipeD.imagePath}}" class="img-responsive" alt="{{recipeD.name}}" style="max-height: 400px">
+    
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <h4 class="wrapper"> {{recipeD.name}}</h4>
+  
+    
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col col-xs-12">
+    <h5 class="wrapper">{{recipeD.description}}</h5> 
+  </div>
+</div>
+
+
+<div class="row">
+ <div class="col-xs-12">
+   <ul class="list-group">
+     <li class="list-group-item" *ngFor="let x of recipeD.ingredient; let i=index" style="background-color:green; color: white">
+       {{x.name}} - {{x.amount}}
+
+     </li>
+   </ul>
+ </div>
+</div>
+
+
+
+
+
+  <div class="btn-group" appDropdown>
+      <button type="butten" class="btn btn-primary dropdown-toggle">
+        Manage Recipe <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li  (click)= "onAddToShoppingList()"> <a style="cursor: pointer"> 
+            <span class="glyphicon glyphicon-plus" style="margin-right: 10px"></span>  To Shopping List</a></li>
+        <li  (click) = "onEditRecipe()"> <a style="cursor: pointer">
+            <span style="margin-right: 10px" class="glyphicon glyphicon-edit"></span>    Edit Recipe</a></li>
+
+            <ng-template [ngIf]="authService.isAuthenticated()">
+            <li > <a style="cursor: pointer" (click) = "onDelete()">
+            <span class="glyphicon glyphicon-trash" style="margin-right: 10px"></span> Delete Recipe</a></li>
+            </ng-template>
+      </ul>
+    </div>

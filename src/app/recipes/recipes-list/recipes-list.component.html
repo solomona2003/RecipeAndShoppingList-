@@ -1,0 +1,20 @@
+
+<h4 class="mains">Recipes-List Component</h4>
+<div class="row">
+     <div class="col-xs-12">
+          <button type="" class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
+     </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-recipes-item  
+        
+        
+          *ngFor="let recipe of theRecipe; let i = index" 
+          [index] = "i"
+          [recipe]=recipe
+          (recipeSelected)="onRecipeSelected(recipe)"> 
+        </app-recipes-item> 
+      </div>
+</div>

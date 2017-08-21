@@ -1,0 +1,22 @@
+.rows {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 250px;
+   
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+   text-decoration: none;
+}
+
+
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+   text-decoration: none;
+}
+
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+   text-decoration: none;
+}

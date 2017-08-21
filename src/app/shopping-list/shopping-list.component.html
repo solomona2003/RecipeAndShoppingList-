@@ -1,0 +1,22 @@
+
+<b><h3 class="mains" >Shopping-List Component</h3></b>
+<div class="row">
+  <div class="col-xs-10">
+
+    <app-shopping-edit (newIngridient) = "onListAdded($event)"></app-shopping-edit>
+    <hr>
+
+
+    <h6 class="others">List in the Ingredients Model</h6>
+    <ul class="list-group">
+      <a class="list-group-item" style="cursor: pointer" *ngFor = "let x of ingredient; let i=index"
+      (click)= "onEditItem(i)">
+        {{x.name}} ({{x.amount}})
+      </a>
+      
+    </ul>
+
+    
+
+  </div> 
+</div>

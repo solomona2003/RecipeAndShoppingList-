@@ -1,0 +1,34 @@
+<h4 class="subs">Recipes-Item Component</h4>
+
+  
+
+         <div class="list-group">
+            
+            <div 
+            [routerLink]="[index]" style="cursor: pointer" 
+            class="list-group-item clearfix styles" style="border-width: 2px">
+                
+
+                    
+    
+                    <div class="pull-left">
+                            <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+                            <p class="list-group-item-text">{{recipe.description | titlecase}}</p>
+                            
+                        </div>
+                         <span class="pull-right ">
+                             <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-responsive" style="max-height: 100px;">
+                          </span>
+                         
+
+            </div>
+        </div>
+
+               
+
+        
+        
+
+         <!-- <a routerLink="/user/bob" routerLinkActive #rla="routerLinkActive">
+  Bob {{ rla.isActive ? '(already open)' : ''}}
+</a> -->
