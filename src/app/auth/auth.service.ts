@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import * as firebase from 'firebase';
 
+
+
 @Injectable()
 export class AuthService {
 

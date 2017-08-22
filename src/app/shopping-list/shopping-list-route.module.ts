@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 const shoppingListRoutes: Routes = [
     // shopping-list
     {
-        path: 'shopping-list', component: ShoppingListComponent, children: [
+        path: '', component: ShoppingListComponent, children: [
             { path: ':shopping-edit', component: ShoppingEditComponent }
         ] },
 

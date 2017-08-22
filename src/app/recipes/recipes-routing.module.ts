@@ -12,13 +12,15 @@ const recipesRoutes: Routes = [
     // recipes
     // { path: '', redirectTo: '/recipes', pathMatch: 'full' },
 
-    {
-        path: 'recipes', component: RecipesComponent, children: [
+
+
+         {path: '', component: RecipesComponent, children: [ // '' here since recipes is already used at app routing
             { path: '', component: RecipesLandComponent },
             { path: 'new', component: RecipeEditComponent, canActivate: [AuthGuard] }, // for add new Recipe button
             { path: ':id', component: RecipesDetailComponent },
             // for editing existing recipe on edit recipe button on recipe details
             { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuard] }
+
         ]
     },
 ];
