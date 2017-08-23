@@ -55,7 +55,7 @@ console.log(this.editMode);
     let recipeImagePath = '';
     let recipeDescription = '';
 
-    let recipeIngredients = new FormArray([]);
+    const recipeIngredients = new FormArray([]);
 
     if (this.editMode) {
       const recipe = this.recipeService.getRecipe(this.id);
@@ -64,7 +64,7 @@ console.log(this.editMode);
       recipeDescription = recipe.description;
 
       if (recipe['ingredient']) {
-        for (let x of recipe.ingredient) {
+        for (const x of recipe.ingredient) {
           recipeIngredients.push(
             new FormGroup ({
               'name': new FormControl (x.name, Validators.required),
@@ -109,6 +109,10 @@ console.log(this.editMode);
   onDeleteIngredient(index: number) {
     (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
 
+  }
+
+  getControls() {
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
 
 }

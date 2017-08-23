@@ -14,7 +14,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./recipes-detail.component.css']
 })
 export class RecipesDetailComponent implements OnInit {
-  
+
   // @Input() recipeD: Recipe;
   recipeD: Recipe;
   id: number;
@@ -33,7 +33,7 @@ export class RecipesDetailComponent implements OnInit {
   }
 
    // this is alternative 1
-  // onAddToShoppingList() { 
+  // onAddToShoppingList() {
 
   //   this.shoppingListService.onAddIngredeint (this.recipeD.ingredient);
 
@@ -44,10 +44,12 @@ export class RecipesDetailComponent implements OnInit {
 
   onAddToShoppingList() {
     this.recipeService.addIngredientsToShoppingList(this.recipeD.ingredient);
+    this.router.navigate(['/shopping-list']);
   }
 
   onEditRecipe() {
     this.router.navigate(['edit'], {relativeTo: this.activatedRoute});
+
     // alternatively
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.activatedRoute});
 
@@ -56,6 +58,10 @@ export class RecipesDetailComponent implements OnInit {
   onDelete() {
     this.recipeService.onDelete(this.id);
     this.router.navigate(['../'], {relativeTo: this.activatedRoute});
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 
 }

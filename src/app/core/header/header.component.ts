@@ -1,8 +1,8 @@
-import { AuthService } from './../auth/auth.service';
-import { RecipeService } from './../recipes/service/recipe.service';
+import { AuthService } from '../../auth/auth.service';
+import { RecipeService } from '../../recipes/service/recipe.service';
 import { Response } from '@angular/http';
-import { DataStorageService } from './../shared/service/data-storage.service';
-import { Component } from '@angular/core';
+import { DataStorageService } from '../../shared/service/data-storage.service';
+import { Component} from '@angular/core';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 })
 
 
-export class HeaderComponent  {
+export class HeaderComponent {
 
     status: boolean;
     constructor(private dataStorageService: DataStorageService, private recipeService: RecipeService,
@@ -31,6 +31,11 @@ export class HeaderComponent  {
 
     onGet() {
         this.dataStorageService.fetchData();
+    }
+
+    statusChecker() {
+
+        return this.authService.isAuthenticated();
     }
 
 

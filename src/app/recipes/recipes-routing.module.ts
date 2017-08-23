@@ -33,8 +33,9 @@ const recipesRoutes: Routes = [
     exports: [
         RouterModule
 
-    ]
-})
+    ],
+    providers: [AuthGuard] // only loaded lazily since its here instead of core.module,
+})                           // Guards are the only service that should be added to a routing module
 export class RecipesRoutingMudule {
 
 }

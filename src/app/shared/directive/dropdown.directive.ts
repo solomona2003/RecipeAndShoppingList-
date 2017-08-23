@@ -34,7 +34,7 @@ export class DropdownDirective implements OnDestroy {
     this.timer = setTimeout(() => {
       this.timer = null;
       this.isOpen = false;
-    }, 200);
+    }, 1000);
   }
 
   @HostListener('mouseenter') cancelTimeout() {

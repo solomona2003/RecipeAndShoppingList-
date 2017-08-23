@@ -84,4 +84,10 @@ html, body {
 
 
 
-.material-icons.md-18 { font-size: 18px; }
+.floating-right {
+  float: right;
+}
+
+.glyphicon-Font {
+  font-size: 20px;
+}

@@ -1,13 +1,6 @@
-import { HomeComponent } from './../home/home.component';
-import { AuthGuard } from './../auth/auth-guard.service';
-
-
-import { ShoppingEditComponent } from '../shopping-list/shopping-edit/shopping-edit.component';
-
-import { ShoppingListComponent } from '../shopping-list/shopping-list.component';
-import { AppComponent } from '../app.component';
+import { HomeComponent } from '.././core/home/home.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules} from '@angular/router';
 
 
 const appRoutes: Routes = [
@@ -19,7 +12,7 @@ const appRoutes: Routes = [
  ];
 
 @NgModule ({
-        imports: [RouterModule.forRoot(appRoutes)],
+        imports: [RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})],
         exports: [RouterModule]
     })
 

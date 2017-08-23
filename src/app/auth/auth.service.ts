@@ -67,6 +67,11 @@ export class AuthService {
     }
 
 
+    // private socialSignIn(provider: number): firebase.Promise<FirebaseAuthState> {
+    //     return firebase.auth().login({provider, method: AuthMethods.Popup})
+    //       .then(() => this.updateUserData() )
+    //       .catch(error => console.log(error));
+    //   }
 
     // logInWithGoogle () {
     //     return firebase.auth.GoogleAuthProvider({

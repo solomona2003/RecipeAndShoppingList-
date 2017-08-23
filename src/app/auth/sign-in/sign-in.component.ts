@@ -21,4 +21,12 @@ export class SignInComponent implements OnInit {
 
   }
 
+  onSignInWithGoogle() {
+
+  }
+
+  onSignInWithFacebook() {
+
+  }
+
 }
