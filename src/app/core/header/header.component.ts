@@ -1,6 +1,6 @@
+import { RecipeService } from './../../recipes/service/recipe.service';
 import { AuthService } from '../../auth/auth.service';
-import { RecipeService } from '../../recipes/service/recipe.service';
-import { Response } from '@angular/http';
+// import { HttpEvent, HttpEventType} from '@angular/common/http';
 import { DataStorageService } from '../../shared/service/data-storage.service';
 import { Component} from '@angular/core';
 
@@ -21,7 +21,7 @@ export class HeaderComponent {
 
     onSave() {
         this.dataStorageService.storeData().subscribe(
-            (response: Response) => {
+            (response) => {
                 console.log(response);
 
             }

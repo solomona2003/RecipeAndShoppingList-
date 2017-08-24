@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
+
 
 @Component({
   selector: 'app-root',
@@ -21,6 +23,13 @@ ngOnInit () {
     authDomain: "ng-recipe-book-56769.firebaseapp.com"
   });
 
+
+
+
+
 }
+
+
+
 
 }
