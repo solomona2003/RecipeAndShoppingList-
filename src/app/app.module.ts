@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -22,7 +23,8 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
     AuthModule, // couldnt make it lazy load
     SharedModule,
     CoreModule,
-    SlimLoadingBarModule.forRoot()
+    SlimLoadingBarModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
